@@ -1,0 +1,32 @@
+
+<div *ngIf="listaClassi.length!=0" >
+    <select name="classesStud" id="studs" class="form-select m-2">
+        <option (click)="showClass(cl.idClasse)" *ngFor="let cl of listaClassi">{{cl.idClasse}}</option>
+    </select>
+    
+</div>
+
+
+
+    <button class="btn btn-danger" (click)="showFull()">lista completa syudenti</button>
+
+
+<div *ngIf="listaStu.length!=0">
+    <div>
+            <div class="card myCard" *ngFor="let stu of listaStu">
+                <div class="card-title">
+                    <h3>{{stu.nome}} {{stu.cognome}}</h3>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">ID car : {{stu.idStud}}</h3>
+                    <h3 class="card-title">Citta : {{stu.citta}}</h3>
+                    <h4 class="card-text">classe : {{stu.classe}}</h4>
+                    <h4 class="card-text">indirizzo : {{stu.indirizzo}}</h4>
+                    <br>
+                </div>
+            </div>
+            
+    </div>
+</div> 
+
+

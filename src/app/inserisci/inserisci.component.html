@@ -1,0 +1,119 @@
+<form novalidate [formGroup]="reactiveForm" > <!-- PER USARE FORMGROUP BISOGNA ANDARE IN APP MODULE-->
+    <div class="form-row center">
+        <div class="col-md-4 mb-2">
+            <label for="nome"><b>Nome</b></label>
+            <input type="text" 
+                class="form-control" 
+                id="nome" 
+                name="nome"
+                formControlName="nome"
+                placeholder="inserisici il nome"
+                [ngClass]="{'is-invalid': reactiveForm.controls['nome'].invalid && 
+                                            reactiveForm.controls['nome'].dirty,
+                             'is-valid': reactiveForm.controls['nome'].valid && 
+                                            reactiveForm.controls['nome'].dirty}"> <!--accedo al form tramite reactiveform-->
+
+            <div *ngIf="reactiveForm.controls['nome'].errors && reactiveForm.controls['nome'].dirty" class="invalid-feedback">
+                <p *ngIf="reactiveForm.controls['nome'].errors['required']">
+                    * campo obbligatorio
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <label for="cognome"><b>Cognome</b></label>
+            <input type="text" 
+                class="form-control" 
+                id="cognome" 
+                name="cognome"
+                formControlName="cognome"
+                placeholder="inserisici il cognome"
+                [ngClass]="{'is-invalid': reactiveForm.controls['cognome'].invalid && 
+                                            reactiveForm.controls['cognome'].dirty,
+                             'is-valid': reactiveForm.controls['cognome'].valid && 
+                                            reactiveForm.controls['cognome'].dirty}"> <!--accedo al form tramite reactiveform-->
+
+            <div *ngIf="reactiveForm.controls['cognome'].errors && reactiveForm.controls['cognome'].dirty" class="invalid-feedback">
+                <p *ngIf="reactiveForm.controls['cognome'].errors['required']">
+                    * campo obbligatorio
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <label for="indirizzo"><b>Indirizzo</b></label>
+            <input type="text" 
+                class="form-control" 
+                id="indirizzo" 
+                name="indirizzo"
+                formControlName="indirizzo"
+                placeholder="inserisici l' indirizzo"
+                [ngClass]="{'is-invalid': reactiveForm.controls['indirizzo'].invalid && 
+                                            reactiveForm.controls['indirizzo'].dirty,
+                             'is-valid': reactiveForm.controls['indirizzo'].valid && 
+                                            reactiveForm.controls['indirizzo'].dirty}"> <!--accedo al form tramite reactiveform-->
+
+            <div *ngIf="reactiveForm.controls['indirizzo'].errors && reactiveForm.controls['indirizzo'].dirty" class="invalid-feedback">
+                <p *ngIf="reactiveForm.controls['indirizzo'].errors['required']">
+                    * campo obbligatorio
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <label for="classe"><b>Classe</b></label>
+            <input type="text" 
+                class="form-control" 
+                id="classe" 
+                name="classe"
+                formControlName="classe"
+                placeholder="inserisici la classe"
+                [ngClass]="{'is-invalid': reactiveForm.controls['classe'].invalid && 
+                                            reactiveForm.controls['classe'].dirty,
+                             'is-valid': reactiveForm.controls['classe'].valid && 
+                                            reactiveForm.controls['classe'].dirty}"> <!--accedo al form tramite reactiveform-->
+
+            <div *ngIf="reactiveForm.controls['classe'].errors && reactiveForm.controls['classe'].dirty" class="invalid-feedback">
+                <p *ngIf="reactiveForm.controls['classe'].errors['required']">
+                    * campo obbligatorio
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <label for="citta"><b>Citta</b></label>
+            <input type="text" 
+                class="form-control" 
+                id="citta" 
+                name="citta"
+                formControlName="citta"
+                placeholder="inserisici la citta"
+                [ngClass]="{'is-invalid': reactiveForm.controls['citta'].invalid && 
+                                            reactiveForm.controls['citta'].dirty,
+                             'is-valid': reactiveForm.controls['citta'].valid && 
+                                            reactiveForm.controls['citta'].dirty}"> <!--accedo al form tramite reactiveform-->
+
+            <div *ngIf="reactiveForm.controls['citta'].errors && reactiveForm.controls['citta'].dirty" class="invalid-feedback">
+                <p *ngIf="reactiveForm.controls['citta'].errors['required']">
+                    * campo obbligatorio
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-2">
+            <div class="row">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn mt-3 mb-3 w-100"
+                    [ngClass]="{
+                        'btn-secondary': !(reactiveForm.valid),
+                        'btn-primary': reactiveForm.valid }"
+                        [disabled]="!(reactiveForm.valid )"
+                        (click)="confirm()">
+                        Registra Nuovo Studente
+                    </button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="reset" class="w-100 mb-3 mt-3 btn btn-danger">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
